@@ -19,14 +19,14 @@ export class Product {
    @JoinColumn()
    category_id: number;
 
-   @Column()
+   @Column({nullable: true})
    thumbnail_url: string;
 
-   @Column({default: true})
-   visible_public : boolean;
+   @Column('tinyint',{default: 1})
+   visible_public : number;
 
-   @Column({default: true})
-   visible_authenticated: boolean;
+   @Column('tinyint',{default: 1})
+   visible_authenticated: number;
 
    @CreateDateColumn()
    created_at : Date;
