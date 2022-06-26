@@ -5,7 +5,6 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { CartModule } from './cart/cart.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 
@@ -20,7 +19,6 @@ import { CategoryModule } from './category/category.module';
     AuthenticationModule, 
     CatalogModule, 
     CartModule,
-    UserModule,
     ProductModule,
     CategoryModule
   ],
