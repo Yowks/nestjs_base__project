@@ -7,20 +7,19 @@ import { CartModule } from './cart/cart.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type :"sqlite",
-      database: "ecommerce",
+      database: "DATABASE.sqlite",
       entities: [__dirname + "/**/*.entity{.ts,.js}"],
       synchronize: true
     }),
     AuthenticationModule, 
     CatalogModule, 
-    CartModule,
     ProductModule,
-    CategoryModule
+    CategoryModule,
+    //CartModule
   ],
   controllers: [AppController],
   providers: [AppService],
