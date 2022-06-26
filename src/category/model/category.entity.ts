@@ -1,18 +1,18 @@
 import { Entity,Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('users')
-export class User {
+@Entity('categories')
+export class Category {
    @PrimaryGeneratedColumn()
    id: number;
 
-   @Column()
-   name: string;
+   @Column({unique:true})
+   index: number;
 
    @Column()
-   email: string;
+   label: string;
 
    @Column()
-   password_hash: string;
+   description: string;
 
    @CreateDateColumn()
    created_at : Date;
