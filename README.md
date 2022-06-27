@@ -64,6 +64,7 @@ $ docker run -p 3000:3000 ecommerce
 > Execute the container
 
 > API can be accessed at : *localhost:3000*
+
 > API swagger documentation can be accessed at : *localhost:3000/api*
 
 ## To Do
