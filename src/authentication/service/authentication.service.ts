@@ -18,7 +18,6 @@ export class AuthenticationService {
   
   async validateUser(mail: string, password: string): Promise<any> {
     const foundUser = await this.user_repository.findOneBy({email: mail});
-    console.log(foundUser)
     if (foundUser) {
       if (await md5(foundUser.id+''+password) == foundUser.password_hash) {
         const { password_hash, ...result } = foundUser
