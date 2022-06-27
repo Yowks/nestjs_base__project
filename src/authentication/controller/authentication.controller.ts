@@ -9,7 +9,7 @@ export class AuthenticationController {
     constructor(private user_service: AuthenticationService) { }
     
     /**
-     * @returns an object user after bein registered
+     * @returns an object user after being registered
      * @param user_dto  - user dto
      */
     @Post('signup')
