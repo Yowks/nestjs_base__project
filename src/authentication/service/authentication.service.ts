@@ -3,16 +3,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/authentication/model/user.entity';
+import { UserDto } from '../dto/user.dto';
 var md5 = require('md5');
 
 @Injectable()
 export class AuthenticationService {
   constructor(@InjectRepository(User) private user_repository: Repository<User>, private jwt: JwtService) { }
 
-  async signup(user: User): Promise<User> {
-    const hash = await md5(user.id+''+user.password_hash);
-    user.password_hash = hash
-    return await this.user_repository.save(user);
+  async signup(user_dto: UserDto): Promise<User> {
+    const hash = await md5(user_dto.id+''+user_dto.password_hash);
+    user_dto.password_hash = hash
+    return await this.user_repository.save(user_dto);
   }
   
   async validateUser(mail: string, password: string): Promise<any> {
